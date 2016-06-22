@@ -3,6 +3,12 @@
 
 ## Demo
 [Demo](https://bizhi.chainwon.com/?pn=19)
+
+## 特性
+
++ `扁平化`
++ `阴影`
+
 ## 演示截图
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/1.jpg">
 
