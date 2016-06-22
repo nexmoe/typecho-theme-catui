@@ -7,7 +7,8 @@
 ## 特性
 
 + `扁平化`
-+ `阴影`
++ `阴影化`
++ `圆角化`
 
 ## 演示截图
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/1.jpg">
