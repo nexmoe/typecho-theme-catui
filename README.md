@@ -1,5 +1,5 @@
 # 轻惋多说CSS
-> 请勿删除版权~ <
+请勿删除版权~
 ## Demo
 [Demo](https://bizhi.chainwon.com/?pn=19)
 ## 演示截图
