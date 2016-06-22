@@ -27,12 +27,15 @@ padding: 0 3px;
 感谢Hran：[https://hran.me/](https://hran.me/)
 
 ## 演示截图
+<center>
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/1.jpg">
 
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/2.jpg">
 
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/QQ%E6%88%AA%E5%9B%BE20160621184007.png">
 
+<img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/3.png">
+</center>
 ## LICENSE
 
 MIT © [轻惋壁纸](https://bizhi.chainwon.com)
