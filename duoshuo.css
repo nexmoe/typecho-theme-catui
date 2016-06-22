@@ -146,3 +146,23 @@
 #ds-notify #ds-reset .ds-logo {
     margin-top: 5px;
 }
+#ds-thread #ds-reset .ds-paginator {
+    margin-bottom: 10px!important;
+}
+#ds-thread #ds-reset .ds-paginator .ds-current {
+    border: 0!important;
+    border-radius: 50%!important;
+    box-shadow: 1px 1px 5px #ddd;
+    background: #fff!important;
+}
+#ds-thread #ds-reset .ds-paginator a {
+    font-size: 12px;
+    margin: 0 3px;
+    padding: 10px 14px!important;
+    border: 0px solid transparent!important;
+    border-radius: 50%!important;
+}
+#ds-thread #ds-reset .ds-paginator a:hover {
+    background: #fff!important;
+    color: #ff95b8!important;
+}
