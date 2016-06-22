@@ -10,6 +10,22 @@
 + `阴影化`
 + `圆角化`
 
+## 纯CSS显示博主
+
+```CSS
+#ds-thread #ds-reset a.ds-user-name[data-user-id='这里是你的多说id']:after {
+content: "博主";
+margin-left: 6px;
+font-size: 12px;
+color: #13BF20;
+background: rgba(255, 255, 255, .35);
+border-radius: 4px;
+padding: 0 3px;
+}
+```
+
+感谢Hran：[https://hran.me/](https://hran.me/)
+
 ## 演示截图
 <img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/1.jpg">
 
