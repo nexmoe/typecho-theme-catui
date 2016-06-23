@@ -28,7 +28,7 @@ padding: 0 3px;
 
 ## 演示截图
 
-<img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/Demo.jpg">
+<img src="https://raw.githubusercontent.com/chainwon/duoshuo/gh-pages/Demo.png">
 
 ## LICENSE
 
