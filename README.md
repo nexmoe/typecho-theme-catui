@@ -1,5 +1,5 @@
 # 轻惋多说CSS
-> 版本：1.0.1
+> 版本：1.0.2
 
 ## Demo
 [Demo](https://bizhi.chainwon.com/?pn=19)
