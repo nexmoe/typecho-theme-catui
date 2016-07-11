@@ -166,3 +166,10 @@
     background: #fff!important;
     color: #ff95b8!important;
 }
+@media screen and (max-width:1081px) {
+    #ds-thread #ds-reset .ds-textarea-wrapper {
+        margin-left: -38px;
+        width: calc(100%+50px)!important;
+        border: none;
+    }
+}
