@@ -2,7 +2,7 @@
 > 版本：1.0.2
 
 ## Demo
-[Demo](https://bizhi.chainwon.com/?pn=19)
+[Demo](http://bizhi.chainwon.com/?i=523)
 
 ## 特性
 
