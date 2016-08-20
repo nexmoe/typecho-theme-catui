@@ -173,3 +173,6 @@
         border: none;
     }
 }
+#ds-thread #ds-reset .ds-post-toolbar, #ds-reset .ds-avatar {
+    box-shadow: none;
+}
