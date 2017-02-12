@@ -1,5 +1,6 @@
 * {
     font-family: "Microsoft YaHei";
+    color: #5b6064;
 }
 body, form, h1, h2, h3, h4, p, ul {
     margin: 0
@@ -20,10 +21,6 @@ ol {
 }
 ul {
     padding: 0
-}
-button, html, input, option, select, textarea {
-    font:'PT serif', \5FAE\8EDF\6B63\9ED1\9AD4, \5FAE\8F6F\96C5\9ED1, \534E\6587\7EC6\9ED1, serif;
-    color: #222
 }
 article h1, article h2, article h3, article h4 {
     font-weight: 500;
