@@ -14,14 +14,11 @@
 多说表情
 ----
 
-----------
 下载链接：<a href="https://i.chainwon.com/newpaopao.zip">https://i.chainwon.com/newpaopao.zip</a>
 使用 <cat>配套多说CSS</cat> 后，将压缩包文件夹 <cat>newpaopao</cat> 解压到 <cat>博客</cat> 根目录即可。
 
 配套多说CSS
 -------
-
-----------
 
     /* @轻梦 https://i.chainwon.com/catui.html */
      #ds-thread #ds-reset a.ds-user-name[data-user-id='13895227']:after {
