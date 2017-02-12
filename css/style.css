@@ -1,4 +1,3 @@
-
 * {
     font-family: "Microsoft YaHei";
 }
@@ -26,8 +25,10 @@ button, html, input, option, select, textarea {
     font:'PT serif', \5FAE\8EDF\6B63\9ED1\9AD4, \5FAE\8F6F\96C5\9ED1, \534E\6587\7EC6\9ED1, serif;
     color: #222
 }
-h1, h2, h3, h4 {
+article h1, article h2, article h3, article h4 {
     font-weight: 500;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
 }
 input:focus, textarea:focus {
     outline: 0
@@ -224,6 +225,7 @@ blockquote p {
     text-align: center;
     text-shadow: 1px 1px 5px #B1B1B1;
     font-weight: normal;
+    border: none;
 }
 .p-title:before {
     content: none;
