@@ -1,16 +1,10 @@
 在这下载
 ----
 
-
-----------
-
-
 下载链接：<a href="https://i.chainwon.com/Wcat.zip">https://i.chainwon.com/Wcat.zip</a>
 
 其他说明
 ----
-
-----------
 
  - 该模板需要插件：TeStat的配合，下载地址<a target="_blank"
    href="https://github.com/jiangmuzi/TeStat">https://github.com/jiangmuzi/TeStat</a>
