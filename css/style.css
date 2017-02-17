@@ -1,6 +1,5 @@
 * {
     font-family: "Microsoft YaHei";
-    color: #5b6064;
 }
 body, form, h1, h2, h3, h4, p, ul {
     margin: 0
@@ -21,6 +20,9 @@ ol {
 }
 ul {
     padding: 0
+}
+article {
+    color: #5b6064;
 }
 article h1, article h2, article h3, article h4 {
     font-weight: 500;
@@ -233,8 +235,20 @@ blockquote p {
 .cover img {
     width: 100%;
     display: inline-block;
-    border-radius: .5em;
+    border-radius: 6px;
     transition:all .35s;
+}
+.cover p {
+    width: 100%;
+    display: inline-block;
+    border-radius: 6px;
+    transition: all .35s;
+    background: rgb(244, 164, 164);
+    padding: 150px 0;
+    color: #fff;
+    font-size: 50px;
+    font-style: oblique;
+    text-shadow: 1px 2px 5px #6f6e6e;
 }
 .p-text {
     word-wrap: break-word;
@@ -485,6 +499,15 @@ table, th, td {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 90%;
+}
+.nofound {
+    padding: 100px;
+    padding-bottom: 135px;
+    font-size: 50px;
+    text-align: center;
+}
+.nofound p {
+    -webkit-box-reflect: below -13px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.2)));
 }
 @media(min-width:1080px) {
     header {
