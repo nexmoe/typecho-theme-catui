@@ -14,9 +14,7 @@
                       <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" class="edit-btn flat-icon-light" target="_blank"><i class="fa fa-edit"></i> 编辑</a></li>
                       <?php endif;?>
                     </ul>
-                    <?php if (!empty($this->options->OtherTool) && in_array('cover', $this->options->OtherTool)): ?>
-                        <div class="cover flat-icon-light"><img src="<?php img_postthumb($this->cid); ?>"></div>
-                    <?php endif;?>
+                    <?php Cover($this->cid); ?>
                 <div class="p-text">
                     <?php $this->content(); ?></div>
                     <div class="others">
