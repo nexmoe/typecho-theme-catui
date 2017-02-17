@@ -3,7 +3,7 @@
   * Cat UI 情托于物。人情冷暖，世态炎凉。 * 
   * @package Cat UI 
   * @author 折影轻梦 
-  * @version 0.9 
+  * @version 1.0 
   * @link http://i.chainwon.com/ 
 */ 
 $this->need('header.php'); ?>
@@ -24,9 +24,7 @@ $this->need('header.php'); ?>
                       <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" class="edit-btn flat-icon-light" target="_blank"><i class="fa fa-edit"></i> 编辑</a></li>
                       <?php endif;?>
                     </ul>
-                    <?php if (!empty($this->options->OtherTool) && in_array('cover', $this->options->OtherTool)): ?>
-                        <a href="<?php $this->permalink() ?>"><div class="cover flat-icon-light waves-effect waves-circle waves-light"><img src="<?php img_postthumb($this->cid); ?>"></div></a>
-                    <?php endif;?>
+                        <a href="<?php $this->permalink() ?>"><?php Cover($this->cid); ?></a>
                 <div class="p-text">
                     <?php $this->content('<i class="float-button-light waves-circle fa fa-plus waves-effect waves-float waves-light"></i>'); ?></div>
             </article>
