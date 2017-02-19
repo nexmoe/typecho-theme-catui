@@ -1,3 +1,5 @@
+一款简洁的个人单栏主题。
+
 演示站点
 ----
 - [折影轻梦](https://i.chainwon.com/catui.html)
@@ -15,6 +17,17 @@
    href="https://github.com/jiangmuzi/TeStat">https://github.com/jiangmuzi/TeStat</a>
  - 此模板仅仅在HTTPS环境下测试，非HTTPS环境不明。
  - 此模板将会一直维护，绝不离弃。
+ 
+更新日志
+----
+#### 2017-02-17 更新 1.0版本
+
+ 1. HTML cat标签
+ 1. tags、搜索、多说、封面图、代码高亮、分享等
+ 1. 新增主题后台，可自定义头像及多说等……
+ 1. 后台新增最新版本检测
+ 1. 新增404页面
+ 1. 新增Cover新样式
 
 多说表情
 ----
