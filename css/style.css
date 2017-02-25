@@ -1,5 +1,5 @@
 * {
-    font-family: "Microsoft YaHei";
+    font-family:"Microsoft YaHei";
 }
 body, form, h1, h2, h3, h4, p, ul {
     margin: 0
@@ -10,21 +10,25 @@ body {
     background-position: center bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-bottom: 110px;
 }
 code {
-    border-radius: .3em;
+    border-radius: 3px;
     max-height: 600px;
 }
 ol {
     padding-left: 20px;
+    margin-top: 0;
 }
 ul {
     padding: 0
 }
 article {
     color: #5b6064;
+    max-width: 760px;
+    margin: 0 auto 10px auto;
 }
-article h1, article h2, article h3, article h4 {
+article h1, article h2, article h3 {
     font-weight: 500;
     padding-bottom: 0.3em;
     border-bottom: 1px solid #eee;
@@ -35,14 +39,13 @@ input:focus, textarea:focus {
 html {
     overflow-y: scroll
 }
-#content {
+#content .container {
     margin: 50px auto;
     max-width: 1000px;
     box-shadow: 0 0 25px rgba(0, 0, 0, .1);
     border-radius: 10px;
     background: #fff;
     animation: 0.8s both loading-l;
-    overflow: hidden;
 }
 cat {
     background: #f5f5f5;
@@ -74,7 +77,7 @@ cat {
     color: #fff;
 }
 html::-webkit-scrollbar-track-piece {
-    background: #fff
+    background: rgba(0, 0, 0, 0);
 }
 html::-webkit-scrollbar {
     width: 8px;
@@ -96,15 +99,38 @@ ul {
 }
 a {
     color: #5b6064;
-    text-decoration: none
+    text-decoration: none;
 }
 img {
     border: 0 none
 }
 header {
     text-align: center;
-    padding: 3em 20px;
+    padding: 50px 20px 110px 0;
+    position: relative;
+    overflow: hidden;
+}
+header::after {
+    content:'';
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+    width: calc(100% + 600px);
+    height: 500px;
+    background: #fff;
+    left: -300px;
+    bottom: -440px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+}
+header .bg {
     background: rgb(244, 164, 164);
+    height: 150%;
+    width: 150%;
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    z-index: -1;
+    filter: blur(15px);
 }
 header a {
     color: #fff
@@ -119,7 +145,7 @@ header img {
 }
 header h1 {
     line-height: 1.5;
-    color: rgb(255, 242, 242);
+    color: #fff;
     font-weight: 400;
 }
 hr {
@@ -128,7 +154,7 @@ hr {
 }
 header p {
     padding: .3em 0;
-    color: rgb(255, 242, 242);
+    color: #fff;
 }
 #nav {
     font-size: 1.2em;
@@ -149,21 +175,9 @@ header p {
     color: rgb(244, 164, 164);
     text-shadow: 0 0 15px rgb(244, 164, 164);
 }
-article {
-    padding: 1em 0;
-    max-width: 760px;
-    margin: 20px auto 10px auto;
-}
-article h2:before {
-    content:"♥";
-    color: rgb(244, 164, 164);
-    text-shadow: 0 0 3px rgb(244, 164, 164);
-    margin-right: 5px;
-    animation: 1.2s both h2before infinite linear;
-}
 blockquote {
     margin: 7px 0;
-    padding-left: 1.5em;
+    padding-left: 1em;
     border-left: 4px solid rgb(244, 164, 164);
     font-size:14px;
 }
@@ -172,7 +186,6 @@ blockquote p {
 }
 .others {
     margin-top:10px;
-    height: 30px;
 }
 .others a {
     height: 30px;
@@ -183,22 +196,15 @@ blockquote p {
     text-align: center;
 }
 .share {
+    margin-top: 10px;
     float: right;
 }
 .share a {
     width: 30px;
     color: #fff;
 }
-.share .fa-qq {
-    background: #72afeb;
-}
-.share .fa-weibo {
-    background: #ff6e71;
-}
-.share .fa-star {
-    background: #FED466;
-}
 .tags {
+    margin-top: 10px;
     float: left;
 }
 .tags a {
@@ -212,7 +218,7 @@ blockquote p {
 }
 .tags a:hover {
     transition: all .35s;
-    color: rgb(255, 242, 242);
+    color: #fff;
     background: rgb(244, 164, 164);
 }
 .a-cover {
@@ -222,7 +228,6 @@ blockquote p {
     font-size: 30px;
     padding: .2em .2em 0;
     text-align: center;
-    text-shadow: 1px 1px 5px #B1B1B1;
     font-weight: normal;
     border: none;
 }
@@ -235,32 +240,38 @@ blockquote p {
 .cover img {
     width: 100%;
     display: inline-block;
-    border-radius: 6px;
+    border-radius: 3px;
     transition:all .35s;
 }
 .cover p {
-    width: 100%;
-    display: inline-block;
-    border-radius: 6px;
+    font-family:"Comic Sans MS", "Microsoft Yahei";
+    border-radius: 3px;
     transition: all .35s;
     background: rgb(244, 164, 164);
-    padding: 150px 0;
+    padding: 150px 80px;
     color: #fff;
     font-size: 50px;
     font-style: oblique;
-    text-shadow: 1px 2px 5px #6f6e6e;
+    text-shadow: 0.05em 0.05em 0.2em #999999;
 }
 .p-text {
     word-wrap: break-word;
     word-break: normal
+}
+.p-text a {
+    transition: all .35s;
+    border-bottom: 1px dashed #888;
+}
+.p-text a:hover {
+    color: rgb(244, 164, 164);
+    border-bottom: 1px dashed rgb(244, 164, 164);
 }
 .p-text h3 {
     padding: 2em 10px 1em;
     font-size: 1.5em
 }
 .p-text h4 {
-    padding: 1em 10px 0;
-    font-size: 1.3em
+    padding: 0.5em 0;
 }
 .p-text p {
     line-height: 2em;
@@ -270,7 +281,7 @@ blockquote p {
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    border-radius: .5em
+    border-radius: 3px;
 }
 .p-text del {
     color: #999;
@@ -281,6 +292,7 @@ blockquote p {
     padding: 0.5em 1em 1em 1.5em;
 }
 .p-text .more a {
+    border: none;
     margin-left: calc(50% - 30px);
     display: block;
     width: 60px;
@@ -294,7 +306,7 @@ blockquote p {
     width: 60px;
     height: 60px;
     line-height: 60px;
-    color: rgb(255, 242, 242);
+    color: #fff;
     font-size: 24px;
     background: rgb(244, 164, 164);
     border-radius: 100%;
@@ -323,50 +335,41 @@ blockquote p {
     padding: 1em;
     text-align: center
 }
-.page a {
-    padding: 1em 0;
-    display: block;
-    font-size: 2em;
+.page-navigator {
+    padding: 0;
+    padding-top: 10px;
+    border-top: .125rem dashed #DDD;
+    margin: 0;
+    margin-top: 30px;
+    list-style: none;
     text-align: center;
+    color: #DDD;
+    padding-bottom: 10px;
 }
-.page a:hover {
-    background: #EEE
+.page-navigator .prev, .page-navigator .next {
+    display: none;
 }
-.bgm-biu-song-list a {
+.page-navigator a {
+    transition: all .35s;
+    color: #999;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
     display: block;
-    line-height: 2em;
-    border-radius: .3em;
-    margin-bottom: .2em;
-    transition: background .3s ease;
-    text-decoration: none;
 }
-.bgm-biu-song-list a b {
-    float: left;
-    background: rgb(244, 164, 164);
-    color: rgb(255, 242, 242);
-    margin: .55em .5em 0 1em;
-    font-size: .8em;
-    border-radius: .2em;
-    line-height: 1em;
-    padding: .2em;
-    font-weight: normal;
+.page-navigator a:hover {
+    color: rgb(244, 164, 164);
 }
-.bgm-biu-song-list a time {
-    float: right;
-    padding: 0 15px;
-    color: #BBB
+.page-navigator li {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    margin: 5px 8px;
 }
-.bgm-biu-song-list a h5 {
-    font-size: 1em;
-    margin: 0 7em 0 0;
-    color: #5b6064;
-    overflow: hidden;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.bgm-biu-song-list a:hover {
-    background: #f8f8f8
+.page-navigator .current {
+    box-shadow: 1px 1px 5px #ddd;
 }
 .user {
     display: inline-block;
@@ -378,7 +381,7 @@ blockquote p {
     width: 60px;
     height: 60px;
     line-height: 60px!important;
-    color:rgb(255, 242, 242);
+    color:#fff;
     background: rgb(244, 164, 164);
     text-align: center;
     position: fixed;
@@ -389,9 +392,9 @@ blockquote p {
     font-size: 26px!important;
 }
 .edit-btn {
-    color: rgb(255, 242, 242);
+    color: #fff;
     background: rgb(244, 164, 164);
-    padding: 0 4px;
+    padding: 2px 5px;
     border-radius: 3px;
 }
 .search {
@@ -433,7 +436,7 @@ blockquote p {
     border: none;
     border-radius: 0 3px 3px 0;
     background: rgb(244, 164, 164);
-    color: rgb(255, 242, 242);
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
@@ -441,26 +444,28 @@ th, td {
     text-align: center;
 }
 table {
-    width: calc(100% - 2px);
-    margin-left: 1px;
+    width: 100%;
     border-collapse: collapse;
 }
-.table-title {
-    background: rgb(244, 164, 164)!important;
-}
-.table-title th {
-    color: rgb(255, 242, 242)!important;
-}
 table, th, td {
-    color: rgb(244, 164, 164);
+    color: #fff;
+    background: rgb(244, 164, 164);
     padding: 8px;
-    border: 1px solid rgb(244, 164, 164);
+    border-radius: 3px;
     font-weight: normal;
+    overflow: hidden;
+}
+td {
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
 }
 .link-area {
     font-size:0;
     margin-left:-1%;
     width:102%;
+}
+.link-area a {
+    border: none!important;
 }
 .link-area div {
     width:18%;
@@ -483,13 +488,12 @@ table, th, td {
 .copyright {
     width: 100%;
     text-align: center;
-    color: rgb(255, 242, 242);
+    color: #fff;
     background: rgb(244, 164, 164);
     border-radius: 3px;
-    margin-bottom: 10px;
 }
 .copyright a {
-    color: rgb(255, 242, 242);
+    color: #fff;
     text-decoration: underline;
     padding: 0 3px;
 }
@@ -509,13 +513,138 @@ table, th, td {
 .nofound p {
     -webkit-box-reflect: below -13px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.2)));
 }
+.pages {
+    position: relative;
+    font-size: 0;
+    background: rgb(244, 164, 164);
+    margin-top: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.pages a {
+    width: calc(100% - 100px);
+    display: block;
+    padding: 0 20px;
+    height: 80px;
+    font-size: 30px;
+    color: #fff;
+    line-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pages i {
+    top: 15px;
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    background: rgb(253, 228, 228);
+    color: rgb(244, 164, 164);
+    line-height: 50px;
+    text-align: center;
+    border-radius: 100%;
+}
+.pages .prev i {
+    left: 15px;
+}
+.pages .pnext i {
+    right: 15px;
+}
+.pages .prev a {
+    float: right;
+    text-align: left;
+}
+.pages .pnext a {
+    float: left;
+    text-align: right;
+}
+.pages div {
+    font-size: 30px;
+    width:50%;
+    height: 80px;
+    display: inline-block;
+}
+.t-copyright {
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, .15);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+.t-copyright .info {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    color: #999;
+}
+.t-copyright .cattail {
+    position: absolute;
+    width: 100px;
+    height: 140px;
+    left: calc(50% - 50px);
+    background: #fff;
+    z-index: -1;
+    bottom: -120px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+    border-radius: 0 0 100px 100px;
+    cursor: pointer;
+}
+.support {
+    font-size: 0;
+    background: rgb(244, 164, 164);
+    color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.support div {
+    width: 33.333333333%;
+    margin: 0;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.support img {
+    width: 100%;
+    margin: 0;
+    border-radius: 0!important;
+}
+.support p {
+    width: 100%;
+    margin: 0;
+    font-size: 26px;
+    text-align: center;
+}
+.ear {
+    position: absolute;
+    width: 180px;
+    height: 140px;
+    background: #fff;
+    z-index: 1;
+    bottom: -25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+.ear-l {
+    left: 40px;
+    transform: rotate(-25deg);
+    border-radius: 100% 10% 0 0;
+}
+.ear-r {
+    right: 40px;
+    transform: rotate(25deg);
+    border-radius: 10% 100% 0 0;
+}
 @media(min-width:1080px) {
     header {
         height: 160px
     }
 }
 @media(max-width:1080px) {
-    #content {
+    #content .container {
         width: calc(100% - 40px);
         margin: 10px 20px
     }
@@ -524,17 +653,7 @@ table, th, td {
     }
 }
 @media(max-width:720px) {
-    .p-text img {
-        max-width: 672px
-    }
-    .p-text p img {
-        max-width: 720px
-    }
-    #m .DS {
-        width: 660px;
-        font-size: 1.4em
-    }
-    #content {
+    #content .container {
         margin: 0;
         width: 100%;
         box-shadow: none;
@@ -558,6 +677,32 @@ table, th, td {
         display: inline-block;
         border-radius: 2px;
     }
+    .cover p {
+        padding: 30px 0;
+    }
+    header::after {
+        height: 250px;
+        bottom: -200px;
+    }
+    body {
+        padding: 0;
+    }
+    .ear {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        z-index: 1;
+        bottom: 0px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+        cursor: pointer;
+    }
+    .ear-l {
+        left: 3px;
+    }
+    .ear-r {
+        right: 3px;
+    }
 }
 @keyframes loading-l {
     0% {
@@ -567,16 +712,5 @@ table, th, td {
     100% {
         opacity:1;
         transform:translateY(0px)
-    }
-}
-@keyframes h2before {
-    0% {
-        text-shadow: rgb(244, 164, 164) 0 0 0px;
-    }
-    50% {
-        text-shadow: rgb(244, 164, 164) 0 0 15px;
-    }
-    100% {
-        text-shadow: rgb(244, 164, 164) 0 0 0px;
     }
 }
