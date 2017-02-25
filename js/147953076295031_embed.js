@@ -36,7 +36,7 @@ function(e, t, s) {
 			subfix = "@2x";
 		}
 		while(matched=message.match(/\@\(\s*(呵呵|哈哈|吐舌|太开心|笑眼|花心|小乖|乖|捂嘴笑|滑稽|你懂的|不高兴|怒|汗|黑线|泪|真棒|喷|惊哭|阴险|鄙视|酷|啊|狂汗|what|疑问|酸爽|呀咩爹|委屈|惊讶|睡觉|笑尿|挖鼻|吐|犀利|小红脸|懒得理|勉强|爱心|心碎|玫瑰|礼物|彩虹|太阳|星星月亮|钱币|茶杯|蛋糕|大拇指|胜利|haha|OK|沙发|手纸|香蕉|便便|药丸|红领巾|蜡烛|音乐|灯泡|开心|钱|咦|呼|冷|生气|弱|吐血)\s*\)/)) {
-			message = message.replace(matched[0], "<img src=\"https://i.chainwon.com/newpaopao/" + matched[1] + subfix + ".png\" class=\"biaoqing newpaopao\" height=30 width=30 no-zoom />");
+			message = message.replace(matched[0], "<img src=\"/newpaopao/" + matched[1] + subfix + ".png\" class=\"biaoqing newpaopao\" height=30 width=30 no-zoom />");
 		}
 		return message;
     }
@@ -1486,7 +1486,7 @@ function(e, t, s) {
 							if (window.devicePixelRatio != undefined && window.devicePixelRatio >= 1.49) {
 								subfix = "@2x"
 							}
-							i = "https://i.chainwon.com/" + s + subfix + ".png"
+							i = "/" + s + subfix + ".png"
 						}
 						"WordPress" === e && (t = " " + t + " "), a += '<li><img src="' + i + '" title="' + _(t) + '" height=30 /></li>'
 					}
