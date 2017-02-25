@@ -15,18 +15,20 @@
             </li>
             <?php endwhile; ?>
             <?php if($this->user->hasLogin()):?>
-            <li><a href="https://i.chainwon.com/admin" title="后台" target="_blank">后台</a></li>
+            <li><a href="<?php $this->options->siteUrl(); ?>admin" title="后台" target="_blank">后台</a></li>
             <?php endif;?>
             <form class="search" method="post" action="./" role="search">
                 <input type="search" placeholder="搜索╮(￣▽￣)╭" name="s" class="search-input" value="">
                 <button type="submit" class="search-button flat-icon-light waves-effect waves-circle waves-light" data-ripple=""><i class="fa fa-search"></i></button>
             </form>
         </ul>
-<a href="<?php $this->options->siteUrl(); ?>">
-    <header class="flat-icon-light waves-effect waves-circle waves-light">
-        <img id="av" src="<?php $this->options->logoUrl();?>"> 
-            <div class="user">
-                <h1 id="na"><?php $this->options->title() ?></h1>
-                <p id="t"><?php $this->options->description() ?></p>
-            </div>
-</header></a>
+    <header>
+        <div class="bg"></div>
+        <a href="<?php $this->options->siteUrl(); ?>"><img src="<?php $this->options->logoUrl();?>"></a>
+        <div class="user">
+            <h1><?php $this->options->title() ?></h1>
+            <p><?php $this->options->description() ?></p>
+        </div>
+        <div class="ear ear-l flat-icon waves-effect waves-circle"></div>
+        <div class="ear ear-r flat-icon waves-effect waves-circle"></div>
+    </header>

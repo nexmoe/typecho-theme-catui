@@ -1,4 +1,11 @@
-<?php $this->need('header.php'); ?>
+<?php 
+/**
+ * 赞助页面
+ * 
+ * @package custom 
+ * 
+ */
+$this->need('header.php'); ?>
 <body>
     <div id="content">
         <div class="container">
@@ -15,6 +22,11 @@
                     <?php endif;?>
                 </ul>
                 <div class="p-text">
+                    <div class="support">
+                        <div class="zhifubao"><p>支付宝</p><img src="<?php $this->options->supportzfb(); ?>"></div>
+                        <div class="qq"><p>QQ支付</p><img src="<?php $this->options->supportqq(); ?>"></div>
+                        <div class="weixin"><p>微信支付</p><img src="<?php $this->options->supportwx(); ?>"></div>
+                    </div>
                     <?php $this->content(); ?></div>
                     <?php $this->need('comments.php'); ?>
             </article>

@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('src/css/waves.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>"> 
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('src/css/tooltip.css'); ?>"> 
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.8.0/styles/monokai-sublime.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <?php $this->header("generator=&template="); ?>
