@@ -36,9 +36,6 @@ article h1, article h2, article h3 {
 input:focus, textarea:focus {
     outline: 0
 }
-html {
-    overflow-y: scroll
-}
 #content .container {
     margin: 50px auto;
     max-width: 1000px;
@@ -52,27 +49,27 @@ cat {
     border-radius: 3px;
     padding: 1px 5px;
 }
-.cat-red {
+.red {
     background: rgb(254, 122, 112);
     color: #fff;
 }
-.cat-blue {
+.blue {
     background: rgb(88, 201, 243);
     color: #fff;
 }
-.cat-pink {
+.pink {
     background: rgb(244, 164, 164);
     color: #fff;
 }
-.cat-black {
+.black {
     background: rgb(91, 96, 100);
     color: #fff;
 }
-.cat-green {
+.green {
     background: rgb(34, 172, 143);
     color: #fff;
 }
-.cat-yellow {
+.yellow {
     background: rgb(252, 218, 130);
     color: #fff;
 }
@@ -109,6 +106,7 @@ header {
     padding: 50px 20px 110px 0;
     position: relative;
     overflow: hidden;
+    background: rgb(244, 164, 164);
 }
 header::after {
     content:'';
@@ -202,13 +200,22 @@ blockquote p {
 .share a {
     width: 30px;
     color: #fff;
+    cursor: pointer;
+}
+.share .fa-usd {
+    background: #fff;
+    color: rgb(243, 203, 98);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    line-height: 20px;
 }
 .tags {
-    margin-top: 10px;
-    float: left;
+    display: inline-block;
 }
 .tags a {
     transition: all .35s;
+    margin-top: 10px;
     background: rgb(255, 242, 242);
     color: rgb(244, 164, 164);
     padding: 0 8px;
@@ -594,6 +601,7 @@ td {
     cursor: pointer;
 }
 .support {
+    width: 100%;
     font-size: 0;
     background: rgb(244, 164, 164);
     color: #fff;
@@ -637,6 +645,35 @@ td {
     right: 40px;
     transform: rotate(25deg);
     border-radius: 10% 100% 0 0;
+}
+.float-window {
+    display: none;
+    position: fixed;
+    height : 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(255 ,255, 255, .9);
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+}
+.float-window .content {
+    max-width: 80%;
+    margin: 30px 10%;
+    text-align: center;
+}
+.float-window .content img {
+    max-width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
+}
+.float-window .content h1 {
+    font-weight: 500;
+    margin: 20px;
+}
+.float-window .content .z {
+    width: 400px;
 }
 @media(min-width:1080px) {
     header {
@@ -702,6 +739,12 @@ td {
     }
     .ear-r {
         right: 3px;
+    }
+    .user {
+        display: none;
+    }
+    header img {
+        margin-right: 0;
     }
 }
 @keyframes loading-l {
