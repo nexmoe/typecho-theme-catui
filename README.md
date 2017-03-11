@@ -4,6 +4,11 @@
 ----
 - [折影轻梦](https://i.chainwon.com/catui.html)
 
+使用说明
+----
+<a href="https://i.chainwon.com/341.html"
+   target="_blank" tooltip="https://i.chainwon.com/341.html">https://i.chainwon.com/341.html</a> 给我好好看说明啊！！！
+
 主题情怀
 ----
 
