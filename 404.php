@@ -9,8 +9,8 @@
 $this->need('header.php'); ?>
 <body>
     <div id="content">
+        <div class="container"> 
         <?php $this->need('header-t.php'); ?>
-        <div class="container">
             <article class="nofound"><p>内容被次元之门封印啦！</p></article>
         </div>
     </div>

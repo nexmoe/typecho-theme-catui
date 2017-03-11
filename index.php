@@ -3,7 +3,7 @@
   * Cat UI 情托于物。人情冷暖，世态炎凉。
   * @package Cat UI 
   * @author 折影轻梦 
-  * @version 1.1
+  * @version 1.2
   * @link http://i.chainwon.com/ 
 */ 
 $this->need('header.php'); ?>

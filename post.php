@@ -33,15 +33,34 @@
                       <div class="tags"><?php $this->tags(' ', true); ?></div>
                       <?php if (!empty($this->options->OtherTool) && in_array('share', $this->options->OtherTool)): ?>
                         <div class="share">
+                        <a tooltip="给博主打赏" id="support-b" style="background: rgb(254, 212, 102);width: inherit;padding: 0 8px;"><i class="fa fa-usd"></i> 打赏</a>
+                        <a tooltip="显示该文章的二维码" id="qrcode-b" style="background: rgb(117, 117, 117);width: inherit;padding: 0 8px;"><i class="fa fa-qrcode"></i> 二维码</a>
                         <a tooltip="分享给QQ好友" style="background: #72afeb;" href="http://connect.qq.com/widget/shareqq/index.html?url=<?php $this->permalink() ?>&amp;desc=<?php $this->title(); ?>&amp;pics=<?php echo img_postthumb($this->cid); ?>&amp;site=qqcom" target="_blank"><i class="fa fa-qq"></i></a>
                         <a tooltip="分享到新浪微博" style="background: #ff6e71;" href="http://service.weibo.com/share/share.php?title=<?php $this->title(); ?>&amp;url=<?php $this->permalink() ?>&amp;pic=<?php echo img_postthumb($this->cid); ?>" target="_blank"><i class="fa fa-weibo"></i></a>
-                        <a tooltip="分享到QQ空间" style="background: #FED466;" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&amp;title=<?php $this->title(); ?>&amp;pics=<?php echo img_postthumb($this->cid); ?>" target="_blank"><i class="fa fa-star"></i></a>
+                        <a tooltip="分享到QQ空间" style="background: #ffcd00;" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&amp;title=<?php $this->title(); ?>&amp;pics=<?php echo img_postthumb($this->cid); ?>" target="_blank"><i class="fa fa-star"></i></a>
                       </div>
                       <?php endif;?>
                     </div>
                     <?php $this->need('comments.php'); ?>
             </article>
             <?php $this->need('copyright.php'); ?>
+        </div>
+        <div id="qrcode" class="float-window">
+          <div class="content">
+            <h1>文章二维码</h1>
+            <img src="https://pan.baidu.com/share/qrcode?w=500&h=500&url=<?php $this->permalink() ?>">
+          </div>
+        </div>
+        <div id="support" class="float-window">
+          <div class="content">
+            <h1>支付宝</h1>
+            <img class="z" src="<?php $this->options->supportzfb(); ?>">
+            <h1>QQ支付</h1>
+            <img class="z" src="<?php $this->options->supportqq(); ?>">
+            <h1>微信支付</h1>
+            <img class="z" src="<?php $this->options->supportwx(); ?>">
+          </div>
+        </div>
         </div>
     </div>
     <?php $this->need('footer.php'); ?></body>

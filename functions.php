@@ -1,8 +1,8 @@
 <?php
 function  themeConfig ($form){
-	$nversion='1.1';
+	$nversion='1.2';
 	$lversion=file_get_contents("https://i.chainwon.com/version.txt");
-	if ($lversion>$nversion){
+	if ($lversion > $nversion){
 		echo '<p style="font-size:18px;">你正在使用 <a>'.$nversion.'</a> 版本的Cat UI，最新版本为 <a style="color:red;">'.$lversion.'</a><a href="https://i.chainwon.com/catui.html"><button type="submit" class="btn btn-warn" style="margin-left:10px;">前往更新</button></a></p>';
 	}else {
 		echo '<p style="font-size:18px;">你正在使用最新版的Cat  UI！</p>';
