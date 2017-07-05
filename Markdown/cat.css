@@ -1,0 +1,190 @@
+@charset "utf-8";
+/** 
+  * @author 折影轻梦 
+  * @link http://i.chainwon.com/ 
+*/
+article {
+    color: #444;
+    font-family:"Microsoft YaHei";
+}
+article cat {
+    background: #f5f5f5;
+    border-radius: 3px;
+    padding: 1px 5px;
+}
+article .red {
+    background: rgb(254, 122, 112);
+    color: #fff;
+}
+article .blue {
+    background: rgb(88, 201, 243);
+    color: #fff;
+}
+article .pink {
+    background: rgb(244, 167, 185);
+    color: #fff;
+}
+article .black {
+    background: rgb(91, 96, 100);
+    color: #fff;
+}
+article .green {
+    background: rgb(34, 172, 143);
+    color: #fff;
+}
+article .yellow {
+    background: rgb(252, 218, 130);
+    color: #fff;
+}
+article a {
+    transition: all .35s; 
+    color: #0645ad;
+    text-decoration: none;
+    position: relative;
+    word-wrap: break-word;
+}
+article a:hover, article a:focus {
+    color: #0645ad;
+}
+article a::before {
+    content: "\f0e7";
+    margin-right: 3px;
+    font-family: FontAwesome;
+}
+article a::after {
+    transition: width .35s;
+    content: "";
+    right: 0;
+    width: 0;
+    bottom: -2px;
+    position: absolute;
+    border-bottom: 1px solid #0645ad;
+}
+article a:hover::after {
+    left: 0;
+    width: 100%;
+}
+article p {
+    margin: 1em 0;
+}
+article del {
+    color: #999;
+    font-size: .9em;
+}
+article img {
+	box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+	display: block;
+	margin: 0 auto;
+}
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    font-weight: normal;
+    color: #111;
+    line-height: 1em;
+}
+article h4, article h5, article h6 {
+    font-weight: bold;
+    position: relative;
+}
+article h4:before, article h5:before, article h6:before {
+	position: absolute;
+	left: -15px;
+	content: '#';
+	color: #aaa;
+}
+article h1 {
+    font-size: 1.8em;
+}
+article h2 {
+    font-size: 1.5em;
+}
+article h3 {
+    font-size: 1.3em;
+}
+article h4 {
+    font-size: 1.15em;
+}
+article h5 {
+    font-size: 1em;
+}
+article h6 {
+    font-size: 0.9em;
+}
+article blockquote {
+    color: #666666;
+    margin: 0;
+    padding: 0.2em 1.5em;
+    border-left: 0.35em #EEE solid;
+    background-color: #f8f8f8;
+    line-height: 28px;
+    font-size: 0.95em;
+}
+article hr {
+    display: block;
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+article pre, article code {
+    border-radius: 3px;
+    max-height: 600px;
+}
+article sub, article sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+article sup {
+    top: -0.5em;
+}
+article sub {
+    bottom: -0.25em;
+}
+article ul, article ol {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+    font-size: 0.95em;
+    margin-top: 0;
+}
+article li p: last-child {
+    margin: 0;
+}
+article dd {
+    margin: 0 0 0 2em;
+}
+article table {
+	color: #5b6064;
+	border-spacing: 0;
+	border-radius: 4px;
+	text-align: center;
+	border-collapse: collapse;
+	box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+	margin: 1.5em auto;
+	display: inline-block;
+	max-width: 100%;
+	overflow: auto;
+	white-space: nowrap;
+}
+article table th {
+	border-right: 1px solid #eee;
+	padding: 7px 14px;
+	background-color: #fff;
+	font-weight: normal;
+}
+article table td {
+    border-right: 1px solid #eee;
+    padding: 8px 14px;
+}
+article table th:last-child, article table td:last-child{
+    border: none;
+}
+article table tr {
+	background-color: #f8f8f8;
+}
+article table tr:nth-child(2n) {
+	background-color: #fff;
+}
+article img, article canvas, article iframe, article video, article svg, article select, article textarea {
+    max-width: 100%;
+}

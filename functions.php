@@ -1,6 +1,8 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+error_reporting(0);
 function  themeConfig ($form){
-	$nversion='1.3';
+	$nversion='2.0';
 	$lversion=file_get_contents("https://i.chainwon.com/version.txt");
 	if ($lversion>$nversion){
 		echo '<p style="font-size:18px;">你正在使用 <a>'.$nversion.'</a> 版本的Cat UI，最新版本为 <a style="color:red;">'.$lversion.'</a><a href="https://i.chainwon.com/catui.html"><button type="submit" class="btn btn-warn" style="margin-left:10px;">前往更新</button></a></p>';
@@ -9,10 +11,8 @@ function  themeConfig ($form){
 	}
 	$logoUrl=new Typecho_Widget_Helper_Form_Element_Text('logoUrl',NULL,NULL,_t ('喵咪の男主人的头像'),_t ('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
 	$form->addInput ($logoUrl);
-	$logoUrl2=new Typecho_Widget_Helper_Form_Element_Text('logoUrl2',NULL,NULL,_t ('喵咪の女主人的头像'),_t ('在这里填入一个图片URL地址, 以在网站标题前加上第二个个LOGO（留空则仅显示博主信息）'));
-	$form->addInput ($logoUrl2);
-	$girlid=new Typecho_Widget_Helper_Form_Element_Text('girlid',NULL,NULL,_t ('喵咪の女主人的ID'),_t ('在这里填入一个Typecho的用户ID'));
-	$form->addInput ($girlid);
+	$background=new Typecho_Widget_Helper_Form_Element_Text('background',NULL,NULL,_t ('喵咪の背景'),_t ('在这里填入一个图片URL地址, 给猫咪添加一个背景图片'));
+	$form->addInput ($background);
 	$supportzfb=new Typecho_Widget_Helper_Form_Element_Text('supportzfb',NULL,NULL,_t ('喵咪の主人的支付宝付款二维码'),_t (''));
 	$form->addInput ($supportzfb);
 	$supportqq=new Typecho_Widget_Helper_Form_Element_Text('supportqq',NULL,NULL,_t ('喵咪の主人的腾讯QQ付款二维码'),_t (''));
@@ -21,22 +21,19 @@ function  themeConfig ($form){
 	$form->addInput ($supportwx);
 	$tongji=new Typecho_Widget_Helper_Form_Element_Textarea('tongji',NULL,NULL,_t ('喵咪の主人的统计代码'),_t ('为你的网站添加统计代码'));
 	$form->addInput ($tongji);
-	$Cover=new Typecho_Widget_Helper_Form_Element_Radio('Cover',array ('1'=>_t ('第一张图片+标题'),'2'=>_t ('文章标题'),'3'=>_t ('第一张图片'),'5'=>_t ('自定义Cover'),'6'=>_t ('自定义Cover+标题'),'4'=>_t ('关闭Cover')),'1',_t ('喵咪の主人的Cover模式'),_t ("<b>第一张图片+标题：</b>若文章有图片，则优先将文章内第一张图片设置为Cover，当没有图片时，会将标题设置为Cover。<br><b>文章标题：</b>标题设置为Cover。<br><b>第一张图片：</b>将文章内第一张图片设置为Cover。"));
+	$Cover=new Typecho_Widget_Helper_Form_Element_Radio('Cover',array ('2'=>_t ('文章标题'),'5'=>_t ('自定义Cover'),'6'=>_t ('自定义Cover+标题')),'1',_t ('喵咪の主人的Cover模式'),_t ("<b>第一张图片+标题：</b>若文章有图片，则优先将文章内第一张图片设置为Cover，当没有图片时，会将标题设置为Cover。<br><b>文章标题：</b>标题设置为Cover。<br><b>第一张图片：</b>将文章内第一张图片设置为Cover。"));
 	$form->addInput ($Cover);
 	$OtherTool=new Typecho_Widget_Helper_Form_Element_Checkbox('OtherTool',array ('copyright'=>_t ('喵咪の绒毛（原创文章保护信息）'),'hitokoto'=>_t ('喵咪の鸡汤（文章内显示一言一句话）'),'share'=>_t ('喵咪の分享（文章内显示社交分享按钮）'),'smoothscroll'=>_t ('喵咪の柔软（开启SmoothScroll平滑滚动）'),'pages'=>_t ('喵咪の两身（文章内显示上一篇文章以及下一篇文章）'),'footercopyright'=>_t ('喵咪の尾巴（博客页脚版权信息）')),array ('copyright','hitokoto','share','smoothscroll','pages','footercopyright'),_t ('其他工具'));
 	$form->addInput ($OtherTool->multiMode ());
 }
-function  Cover ($cid){
+function themeFields($layout) {
+    $Cover = new Typecho_Widget_Helper_Form_Element_Textarea('Cover', NULL, NULL, _t('自定义缩略图'), _t('输入缩略图地址'));
+    $layout->addItem($Cover);
+}
+function  Cover ($cid,$Cover){
 	$options=Typecho_Widget::widget ('Widget_Options');
 	$db=Typecho_Db::get ();
 	$rs=$db->fetchRow ($db->select ('table.contents.text','table.contents.title')->from ('table.contents')->where ('table.contents.cid=?',$cid)->order ('table.contents.cid',Typecho_Db::SORT_ASC)->limit (1));
-	preg_match_all("/\<img.*?src\=\"(.*?)\"[^>]*>/i",$rs['text'],$thumbUrl);
-	$img_src=$thumbUrl[1][0];
-	$img_counter=count($thumbUrl[0]);
-
-    preg_match_all("/\<cover.*?src\=\"(.*?)\"[^>]*>/i",$rs['text'],$coverUrl);
-    $cover_src=$coverUrl[1][0];
-	$cover_counter=count($coverUrl[0]);
 	
 	$colorid=rand(1,6);
 	switch ($colorid){
@@ -59,34 +56,21 @@ function  Cover ($cid){
 			$color='rgb(162, 197, 253)';
 			break ;
 	}
-	if ($options->Cover =='1'){
-		if ($img_counter>0){
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><img src="'.$img_src.'"></div>';
-		}else {
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
-		}
-	}
-	elseif ($options->Cover =='2'){
-		echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
-	}
-	elseif ($options->Cover =='3'){
-		if ($img_counter>0){
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><img src="'.$img_src.'"></div>';
-		}
-	}
-	elseif ($options->Cover =='4'){
-		echo '';
+	if ($options->Cover =='2'){
+		echo '<div class="cover btn"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
 	}
 	elseif ($options->Cover =='5'){
-		if ($cover_counter>0){
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><img src="'.$cover_src.'"></div>';
+		if ($Cover != ""){
+			echo '<div class="cover btn"><img src="'.$Cover.'"><div class="title">'.$rs['title'].'</div></div>';
+		}else {
+			echo '<div class="cover btn"><img src="'.$options->background.'"><div class="title">'.$rs['title'].'</div></div>';
 		}
 	}
 	elseif ($options->Cover =='6'){
-		if ($cover_counter>0){
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><img src="'.$cover_src.'"></div>';
+		if ($Cover != ""){
+			echo '<div class="cover btn"><img src="'.$Cover.'"><div class="title">'.$rs['title'].'</div></div>';
 		}else {
-			echo '<div class="cover flat-icon-light waves-effect waves-circle waves-light"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
+			echo '<div class="cover btn"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
 		}
 	}
 }
@@ -96,20 +80,25 @@ function  art_count ($cid){
 	$text=preg_replace("/[^\x{4e00}-\x{9fa5}]/u","",$rs['text']);
 	echo mb_strlen($text,'UTF-8');
 }
-function  hitokoto (){
-	$html=file_get_contents("https://api.imjad.cn/hitokoto/");
-	echo '<p>'.$html.'</p>';
-}
-function  img_postthumb ($cid){
-	$db=Typecho_Db::get ();
-	$rs=$db->fetchRow ($db->select ('table.contents.text')->from ('table.contents')->where ('table.contents.cid=?',$cid)->order ('table.contents.cid',Typecho_Db::SORT_ASC)->limit (1));
-	preg_match_all("/\<img.*?src\=\"(.*?)\"[^>]*>/i",$rs['text'],$thumbUrl);
-	$img_src=$thumbUrl[1][0];
-	$img_counter=count($thumbUrl[0]);
-	if ($img_counter>0){
-		echo $img_src;
-	}else {
-		echo "";
+function  img_postthumb ($cid,$Cover){
+	$options=Typecho_Widget::widget ('Widget_Options');
+
+    if ($options->Cover =='2'){
+		echo $options->background;
+	}
+	elseif ($options->Cover =='5'){
+		if ($Cover != ""){
+			echo $Cover;
+		}else {
+			echo $options->background;
+		}
+	}
+	elseif ($options->Cover =='6'){
+		if ($Cover != ""){
+			echo $Cover;
+		}else {
+			echo $options->background;
+		}
 	}
 }
 function  get_post_view ($archive){

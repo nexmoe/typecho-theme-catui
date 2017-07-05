@@ -1,0 +1,130 @@
+/** 
+  * @author Markdown CSS
+  * @link http://markdowncss.github.io/
+*/
+@media print {
+    article *, article *: before, article *: after {
+    background: transparent!important;
+    color: #000!important;
+    box-shadow: none!important;
+    text-shadow: none!important;
+}
+article a, article a: visited {
+    text-decoration: underline;
+}
+article a[href]: after {
+    content: "(" attr(href)")";
+}
+article abbr[title]: after {
+    content: "(" attr(title)")";
+}
+article a[href^="#"]: after, article a[href^="javascript: "]: after {
+    content: "";
+}
+article pre, article blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+}
+article thead {
+    display: table-header-group;
+}
+article tr, article img {
+    page-break-inside: avoid;
+}
+article img {
+    max-width: 100%!important;
+}
+article p, article h2, article h3 {
+    orphans: 3;
+    widows: 3;
+}
+article h2, article h3 {
+    page-break-after: avoid;
+}
+}
+article pre, article code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+}
+article pre {
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+}
+article a, article a: visited {
+    color: #3498db;
+}
+article a: hover, article a: focus, article a: active {
+    color: #2980b9;
+}
+article p {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+}
+article h1, article h2, article h3, article h4 {
+    margin: 1.414rem 0 .5rem;
+    font-weight: inherit;
+    line-height: 1.42;
+}
+article h1 {
+    margin-top: 0;
+    font-size: 3.998rem;
+}
+article h2{
+    font-size: 2.827rem;
+}
+article h3 {
+    font-size: 1.999rem;
+}
+article h4 {
+    font-size: 1.414rem;
+}
+article h5 {
+    font-size: 1.121rem;
+}
+article h6 {
+    font-size: .88rem;
+}
+article small {
+    font-size: .707em;
+}
+article img, article canvas, article iframe, article video, article svg, article select, article textarea {
+    max-width: 100%;
+}
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    font-family: Arimo, Helvetica, sans-serif;
+}
+article h1, article h2, article h3 {
+    border-bottom: 2px solid #fafafa;
+    margin-bottom: 1.15rem;
+    padding-bottom: .5rem;
+    text-align: center;
+}
+article blockquote {
+    border-left: 8px solid #fafafa;
+    padding: 1rem;
+}
+article pre, article code {
+    background-color: #fafafa;
+}
+article table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 100%;
+    font: inherit;
+}
+article table th {
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table td {
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+article table tr: nth-child(2n) {
+    background-color: #f8f8f8;
+}

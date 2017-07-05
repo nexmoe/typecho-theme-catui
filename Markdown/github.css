@@ -1,0 +1,215 @@
+/** 
+  * @author Github
+  * @link https://github.com/
+*/
+article *: not('#mkdbuttons') {
+    margin: 0;
+    padding: 0;
+}
+article p {
+    margin: 1em 0;
+}
+article a {
+    color: #4183c4;
+    text-decoration: none;
+}
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    font-weight: 700;
+    line-height: 1.7;
+    cursor: text;
+    position: relative;
+    margin: 1em 0 15px;
+    padding: 0;
+}
+article h1 {
+    font-size: 2.5em;
+    border-bottom: 1px solid #ddd;
+}
+article h2 {
+    font-size: 2em;
+    border-bottom: 1px solid #eee;
+}
+article h3 {
+    font-size: 1.5em;
+}
+article h4 {
+    font-size: 1.2em;
+}
+article h5 {
+    font-size: 1em;
+}
+article h6 {
+    color: #777;
+    font-size: 1em;
+}
+article p, article blockquote, article table, article pre {
+    margin: 15px 0;
+}
+article ul {
+    padding-left: 30px;
+}
+article ol {
+    padding-left: 30px;
+}
+article ol li ul: first-of-type {
+    margin-top: 0;
+}
+article hr {
+    background: transparent url(data: image/png;
+    base64, iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC)repeat-x 0 0;
+    border: 0 none;
+    color: #ccc;
+    height: 4px;
+    margin: 15px 0;
+    padding: 0;
+}
+article a: first-child h1, article a: first-child h2, article a: first-child h3, article a: first-child h4, article a: first-child h5, article a: first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+article h1+p, article h2+p, article h3+p, article h4+p, article h5+p, article h6+p, article ul li>: first-child, article ol li>: first-child {
+    margin-top: 0;
+}
+article dl {
+    padding: 0;
+}
+article dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px;
+}
+article dl dt: first-child {
+    padding: 0;
+}
+article dl dt>: first-child {
+    margin-top: 0;
+}
+article dl dt>: last-child {
+    margin-bottom: 0;
+}
+article dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px;
+}
+article dl dd>: first-child {
+    margin-top: 0;
+}
+article dl dd>: last-child {
+    margin-bottom: 0;
+}
+article blockquote {
+    border-left: 4px solid #DDD;
+    padding: 0 15px;
+    color: #777;
+}
+article blockquote>: first-child {
+    margin-top: 0;
+}
+article blockquote>: last-child {
+    margin-bottom: 0;
+}
+article table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 100%;
+    font: inherit;
+}
+article table th {
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table td {
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+article table tr: nth-child(2n) {
+    background-color: #f8f8f8;
+}
+article img {
+    max-width: 100%;
+}
+article code, tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    font-size: 12px;
+    color: #333;
+}
+article pre>code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: 0;
+    background: transparent;
+}
+article pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 26px 0;
+}
+article pre code, article pre tt {
+    background-color: transparent;
+    border: 0;
+}
+article sub {
+    vertical-align: sub;
+    top: -1px;
+}
+@media print {
+    body {
+    background: #fff;
+}
+article img, pre, blockquote, table, figure {
+    page-break-inside: avoid;
+}
+article pre code {
+    overflow: visible;
+}
+@media screen {
+    body.inverted {
+    color: #eee!important;
+    border-color: #555;
+    box-shadow: none;
+}
+article : :selection {
+    background: rgba(157, 193, 200, 0.5);
+}
+article h1: :selection {
+    background-color: rgba(45, 156, 208, 0.3);
+}
+article h2: :selection {
+    background-color: rgba(90, 182, 224, 0.3);
+}
+article h3: :selection, article h4: :selection, article h5: :selection, article h6: :selection, article li: :selection, article ol: :selection {
+    background-color: rgba(133, 201, 232, 0.3);
+}
+article code: :selection {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #eee;
+}
+article code span: :selection {
+    background-color: rgba(0, 0, 0, 0.7)!important;
+    color: #eee!important;
+}
+article a: :selection {
+    background-color: rgba(255, 230, 102, 0.2);
+}
+article td: :selection, article th: :selection, article caption: :selection {
+    background-color: rgba(180, 237, 95, 0.5);
+}

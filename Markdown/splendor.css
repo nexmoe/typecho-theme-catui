@@ -1,0 +1,113 @@
+/** 
+  * @author Markdown CSS
+  * @link http://markdowncss.github.io/
+*/
+article p {
+    letter-spacing: 1px !important;
+    line-height: 28px !important;
+    min-height: 1em !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    text-align: left;
+    margin: 20px 0px !important;
+}
+article blockquote {
+    border-left: 10px solid rgba(128, 128, 128, 0.075);
+    background-color: rgba(128, 128, 128, 0.05);
+    padding: 13px 15px !important;
+    margin: 0px;
+}
+article blockquote p {
+    color: #898989;
+    margin: 0px;
+}
+article strong {
+    font-weight: normal;
+    color: #bf360c;
+}
+article pre {
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    word-wrap: break-word;
+    padding: 12px 13px;
+    font-size: 13px;
+    color: #898989;
+}
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    word-break: break-all !important;
+    margin: 20px 0;
+    line-height: 1.2;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 15px;
+}
+article img, article canvas, article iframe, article video, article svg, article select, article textarea {
+    max-width: 100%;
+}
+article h1 {
+    border-left: 6px solid #71BA51 !important;
+    font-size: 20px !important;
+}
+article h2 {
+    border-left: 4px solid #71BA51 !important;
+    font-size: 18px !important;
+}
+article h3 {
+    font-size: 16px;
+    border-left: 4px solid #71BA51 !important;
+}
+article h4 {
+    font-size: 15px;
+    border-left: 2px solid #71BA51 !important;
+}
+article a {
+    color: #4183C4 !important;
+    text-decoration: none !important;
+}
+article ul, article ol {
+    padding-left: 30px;
+}
+article li {
+    line-height: 24px;
+}
+article hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+}
+article pre {
+    background: #f2f2f2 !important;
+    padding: 12px 13px;
+    overflow: auto;
+}
+article code {
+    color: #a71d5d;
+    overflow: auto;
+}
+article table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 100%;
+    font: inherit;
+}
+article table th {
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table td {
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+}
+article table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+article table tr: nth-child(2n) {
+    background-color: #f8f8f8;
+}

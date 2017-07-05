@@ -1,6 +1,12 @@
 <?php 
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('head.php'); 
+/**
+ * 友情链接
+ * 
+ * @package custom 
+ * 
+ */
+ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+ $this->need('head.php');
 ?>
 <body>
     <div id="header">
@@ -10,7 +16,10 @@ $this->need('head.php');
 
         <article class="container">
             <?php
-            $str = preg_replace('#<a href="(.*?)">(.*?)</a>#','<a href="$1" target="_blank" >$2</a>',$this->content);
+            $str = preg_replace('#<li>(.*?)</li>#','<li>$1</li>', $this->content);
+            $str = preg_replace('#<li>(.*?)<a href="(.*?)">(.*?)</a></li>#','<a class="btn btn-raised" href="$2" target="_blank" >$1<p>$3</p></a>',$str);
+            $str = preg_replace('#<ul>#','<div class="link-area">', $str);
+            $str = preg_replace('#</ul>#','</div>', $str);
             $str = preg_replace('#\@\((.*?)\)#','<img src="/usr/themes/catui/newpaopao/$1.png" class="biaoqing">',$str);
             echo $str;
             ?>
