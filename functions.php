@@ -4,7 +4,7 @@ error_reporting(0);
 function  themeConfig ($form){
 	$logoUrl=new Typecho_Widget_Helper_Form_Element_Text('logoUrl',NULL,'https://avatar.mixcm.com/github/nexmoe',_t ('喵咪の主人的头像'),_t ('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
 	$form->addInput ($logoUrl);
-	$background=new Typecho_Widget_Helper_Form_Element_Text('background',NULL,'https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/compress/5c3aec85a4343.jpg',_t ('喵咪の背景'),_t ('在这里填入一个图片URL地址, 给猫咪添加一个背景图片'));
+	$background=new Typecho_Widget_Helper_Form_Element_Text('background',NULL,'https://cdn.jsdelivr.net/gh/nexmoe/image@latest/679710.png',_t ('喵咪の背景'),_t ('在这里填入一个图片URL地址, 给猫咪添加一个背景图片'));
 	$form->addInput ($background);
 	$supportzfb=new Typecho_Widget_Helper_Form_Element_Text('supportzfb',NULL,'https://i.dawnlab.me/ee0093ead3ca8145522ba766c3f9a0ee.png',_t ('喵咪の主人的支付宝付款二维码'),_t (''));
 	$form->addInput ($supportzfb);
