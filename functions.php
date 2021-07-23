@@ -2,26 +2,19 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 error_reporting(0);
 function  themeConfig ($form){
-	$nversion='2.0';
-	$lversion=file_get_contents("https://i.chainwon.com/version.txt");
-	if ($lversion>$nversion){
-		echo '<p style="font-size:18px;">你正在使用 <a>'.$nversion.'</a> 版本的Cat UI，最新版本为 <a style="color:red;">'.$lversion.'</a><a href="https://i.chainwon.com/catui.html"><button type="submit" class="btn btn-warn" style="margin-left:10px;">前往更新</button></a></p>';
-	}else {
-		echo '<p style="font-size:18px;">你正在使用最新版的Cat  UI！</p>';
-	}
-	$logoUrl=new Typecho_Widget_Helper_Form_Element_Text('logoUrl',NULL,NULL,_t ('喵咪の男主人的头像'),_t ('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
+	$logoUrl=new Typecho_Widget_Helper_Form_Element_Text('logoUrl',NULL,'https://avatar.mixcm.com/github/nexmoe',_t ('喵咪の主人的头像'),_t ('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
 	$form->addInput ($logoUrl);
-	$background=new Typecho_Widget_Helper_Form_Element_Text('background',NULL,NULL,_t ('喵咪の背景'),_t ('在这里填入一个图片URL地址, 给猫咪添加一个背景图片'));
+	$background=new Typecho_Widget_Helper_Form_Element_Text('background',NULL,'https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/compress/5c3aec85a4343.jpg',_t ('喵咪の背景'),_t ('在这里填入一个图片URL地址, 给猫咪添加一个背景图片'));
 	$form->addInput ($background);
-	$supportzfb=new Typecho_Widget_Helper_Form_Element_Text('supportzfb',NULL,NULL,_t ('喵咪の主人的支付宝付款二维码'),_t (''));
+	$supportzfb=new Typecho_Widget_Helper_Form_Element_Text('supportzfb',NULL,'https://i.dawnlab.me/ee0093ead3ca8145522ba766c3f9a0ee.png',_t ('喵咪の主人的支付宝付款二维码'),_t (''));
 	$form->addInput ($supportzfb);
-	$supportqq=new Typecho_Widget_Helper_Form_Element_Text('supportqq',NULL,NULL,_t ('喵咪の主人的腾讯QQ付款二维码'),_t (''));
+	$supportqq=new Typecho_Widget_Helper_Form_Element_Text('supportqq',NULL,'https://i.dawnlab.me/ee0093ead3ca8145522ba766c3f9a0ee.png',_t ('喵咪の主人的腾讯QQ付款二维码'),_t (''));
 	$form->addInput ($supportqq);
-	$supportwx=new Typecho_Widget_Helper_Form_Element_Text('supportwx',NULL,NULL,_t ('喵咪の主人的微信付款二维码'),_t (''));
+	$supportwx=new Typecho_Widget_Helper_Form_Element_Text('supportwx',NULL,'https://i.dawnlab.me/ee0093ead3ca8145522ba766c3f9a0ee.png',_t ('喵咪の主人的微信付款二维码'),_t (''));
 	$form->addInput ($supportwx);
-	$tongji=new Typecho_Widget_Helper_Form_Element_Textarea('tongji',NULL,NULL,_t ('喵咪の主人的统计代码'),_t ('为你的网站添加统计代码'));
+	$tongji=new Typecho_Widget_Helper_Form_Element_Textarea('tongji',NULL,'<script data-ad-client="ca-pub-2058306854838448" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>',_t ('喵咪の主人的统计代码'),_t ('为你的网站添加统计代码'));
 	$form->addInput ($tongji);
-	$Cover=new Typecho_Widget_Helper_Form_Element_Radio('Cover',array ('2'=>_t ('文章标题'),'5'=>_t ('自定义Cover'),'6'=>_t ('自定义Cover+标题')),'1',_t ('喵咪の主人的Cover模式'),_t ("<b>第一张图片+标题：</b>若文章有图片，则优先将文章内第一张图片设置为Cover，当没有图片时，会将标题设置为Cover。<br><b>文章标题：</b>标题设置为Cover。<br><b>第一张图片：</b>将文章内第一张图片设置为Cover。"));
+	$Cover=new Typecho_Widget_Helper_Form_Element_Radio('Cover',array ('1'=>_t ('自定义Cover+标题'),'2'=>_t ('文章标题'),'3'=>_t ('自定义Cover')),'1',_t ('喵咪の主人的Cover模式'),_t ("<b>第一张图片+标题：</b>若文章有图片，则优先将文章内第一张图片设置为Cover，当没有图片时，会将标题设置为Cover。<br><b>文章标题：</b>标题设置为Cover。<br><b>第一张图片：</b>将文章内第一张图片设置为Cover。"));
 	$form->addInput ($Cover);
 	$OtherTool=new Typecho_Widget_Helper_Form_Element_Checkbox('OtherTool',array ('copyright'=>_t ('喵咪の绒毛（原创文章保护信息）'),'hitokoto'=>_t ('喵咪の鸡汤（文章内显示一言一句话）'),'share'=>_t ('喵咪の分享（文章内显示社交分享按钮）'),'smoothscroll'=>_t ('喵咪の柔软（开启SmoothScroll平滑滚动）'),'pages'=>_t ('喵咪の两身（文章内显示上一篇文章以及下一篇文章）'),'footercopyright'=>_t ('喵咪の尾巴（博客页脚版权信息）')),array ('copyright','hitokoto','share','smoothscroll','pages','footercopyright'),_t ('其他工具'));
 	$form->addInput ($OtherTool->multiMode ());
