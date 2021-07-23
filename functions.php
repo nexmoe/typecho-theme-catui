@@ -52,14 +52,14 @@ function  Cover ($cid,$Cover){
 	if ($options->Cover =='2'){
 		echo '<div class="cover btn"><p style="background:'.$color.';">'.$rs['title'].'</p></div>';
 	}
-	elseif ($options->Cover =='5'){
+	elseif ($options->Cover =='3'){
 		if ($Cover != ""){
 			echo '<div class="cover btn"><img src="'.$Cover.'"><div class="title">'.$rs['title'].'</div></div>';
 		}else {
 			echo '<div class="cover btn"><img src="'.$options->background.'"><div class="title">'.$rs['title'].'</div></div>';
 		}
 	}
-	elseif ($options->Cover =='6'){
+	elseif ($options->Cover =='1'){
 		if ($Cover != ""){
 			echo '<div class="cover btn"><img src="'.$Cover.'"><div class="title">'.$rs['title'].'</div></div>';
 		}else {
