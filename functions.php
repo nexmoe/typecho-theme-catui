@@ -16,14 +16,20 @@ function  themeConfig ($form){
 	$form->addInput ($tongji);
 	$Cover=new Typecho_Widget_Helper_Form_Element_Radio('Cover',array ('1'=>_t ('自定义Cover+标题'),'2'=>_t ('文章标题'),'3'=>_t ('自定义Cover')),'1',_t ('喵咪の主人的Cover模式'),_t ("<b>第一张图片+标题：</b>若文章有图片，则优先将文章内第一张图片设置为Cover，当没有图片时，会将标题设置为Cover。<br><b>文章标题：</b>标题设置为Cover。<br><b>第一张图片：</b>将文章内第一张图片设置为Cover。"));
 	$form->addInput ($Cover);
-	$OtherTool=new Typecho_Widget_Helper_Form_Element_Checkbox('OtherTool',array ('copyright'=>_t ('喵咪の绒毛（原创文章保护信息）'),'hitokoto'=>_t ('喵咪の鸡汤（文章内显示一言一句话）'),'share'=>_t ('喵咪の分享（文章内显示社交分享按钮）'),'smoothscroll'=>_t ('喵咪の柔软（开启SmoothScroll平滑滚动）'),'pages'=>_t ('喵咪の两身（文章内显示上一篇文章以及下一篇文章）'),'footercopyright'=>_t ('喵咪の尾巴（博客页脚版权信息）')),array ('copyright','hitokoto','share','smoothscroll','pages','footercopyright'),_t ('其他工具'));
+	$OtherTool=new Typecho_Widget_Helper_Form_Element_Checkbox('OtherTool',array (
+		'copyright'=>_t ('喵咪の绒毛（原创文章保护信息）'),
+		'hitokoto'=>_t ('喵咪の鸡汤（文章内显示一言一句话）'),
+		'share'=>_t ('喵咪の分享（文章内显示社交分享按钮）'),
+		'pages'=>_t ('喵咪の两身（文章内显示上一篇文章以及下一篇文章）'),
+		'footercopyright'=>_t ('喵咪の尾巴（博客页脚版权信息）')
+	),array ('copyright','hitokoto','share','pages','footercopyright'),_t ('其他工具'));
 	$form->addInput ($OtherTool->multiMode ());
 }
 function themeFields($layout) {
     $Cover = new Typecho_Widget_Helper_Form_Element_Textarea('Cover', NULL, NULL, _t('自定义缩略图'), _t('输入缩略图地址'));
     $layout->addItem($Cover);
 }
-function  Cover ($cid,$Cover){
+function Cover($cid,$Cover){
 	$options=Typecho_Widget::widget ('Widget_Options');
 	$db=Typecho_Db::get ();
 	$rs=$db->fetchRow ($db->select ('table.contents.text','table.contents.title')->from ('table.contents')->where ('table.contents.cid=?',$cid)->order ('table.contents.cid',Typecho_Db::SORT_ASC)->limit (1));
@@ -79,14 +85,14 @@ function  img_postthumb ($cid,$Cover){
     if ($options->Cover =='2'){
 		echo $options->background;
 	}
-	elseif ($options->Cover =='5'){
+	elseif ($options->Cover =='3'){
 		if ($Cover != ""){
 			echo $Cover;
 		}else {
 			echo $options->background;
 		}
 	}
-	elseif ($options->Cover =='6'){
+	elseif ($options->Cover =='1'){
 		if ($Cover != ""){
 			echo $Cover;
 		}else {

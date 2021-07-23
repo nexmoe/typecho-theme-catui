@@ -11,7 +11,4 @@ $this->footer();
 <script src="<?php $this->options->themeUrl('js/material.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/ripples.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/main.js'); ?>"></script>
-<?php if (!empty($this->options->OtherTool) && in_array('smoothscroll', $this->options->OtherTool)): ?>
-<script src="<?php $this->options->themeUrl('js/SmoothScroll.js'); ?>"></script>
-<?php endif;?>
 <?php $this->options->tongji(); ?>
