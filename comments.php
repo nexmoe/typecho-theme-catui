@@ -62,8 +62,9 @@ $comments->alt(' comment-odd', ' comment-even');
                 </div>
                 <p>
                 <?php 
+                $url = Helper::options()->themeUrl;
                 getCommentAt($comments->coid);
-                $cos = preg_replace('#\@\((.*?)\)#','<img src="/usr/themes/catui2/newpaopao/$1.png" class="biaoqing">',$comments->content);
+                $cos = preg_replace('#\@\((.*?)\)#',"<img src='$url/newpaopao/$1.png' class='biaoqing'>",$comments->content);
                 $cos1 = preg_replace('#<p>#','',$cos);
                 $cos2 = preg_replace('#</p>#','',$cos1);
                 echo $cos2;

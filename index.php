@@ -3,8 +3,8 @@
   * Cat UI 情托于物。人情冷暖，世态炎凉。
   * @package Cat UI 
   * @author 折影轻梦 
-  * @version 2.0
-  * @link http://i.chainwon.com/ 
+  * @version 2.1
+  * @link http://nexmoe.com/ 
 */ 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('head.php'); 
